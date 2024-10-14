@@ -17,8 +17,10 @@ services:
     volumes:
       - ./stack/app:/var/www/html # Serve the same files
       - ./stack/nginx_conf:/etc/nginx/conf.d # Custom Nginx config
+      - ./stack/certs:/etc/nginx/certs # Map SSL certs
     ports:
       - "8081:80"
+      - "1443:443"
     networks:
       - app-network
 
